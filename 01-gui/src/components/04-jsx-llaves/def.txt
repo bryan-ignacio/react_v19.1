@@ -1,1 +1,15 @@
 JSX con llaves:
+    * Pasando strings a JSX con comillas:
+        "este es un string" o 'este es un string'
+
+    * Pasando variables a JSX con llaves:
+        {"este es un string"} o {nombreVariable}
+
+Es posible utilizar JavaScript dentro de JSX con llaves:
+
+    function Componente(){
+        const name = "Bryan";
+        return <>
+            <h1>Hola {name}</h1>
+        </>        
+    }
