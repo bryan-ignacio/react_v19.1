@@ -13,3 +13,5 @@ Es posible utilizar JavaScript dentro de JSX con llaves:
             <h1>Hola {name}</h1>
         </>        
     }
+
+Tambien funcionan las llamadas de funciones Javascript dentro de {}
