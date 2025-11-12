@@ -1,0 +1,17 @@
+exports por default y nombre
+    Podemos utilizar ambos exports en un mismo archivo pero solo uno podra ser por default
+    en un mismo archivo.
+
+default:
+    export default: exporta el archivo por defecto.
+    para importar el componente por default:
+        import NombreComponente from "./ruta"
+nombre:
+    export: export el archivo por nombre.
+    para importar el componente por nombre:
+        import {NombreComponente} from "./ruta"
+
+Si el archivo exporta solo un componente entonces se utiliza un export por default.
+Si el archivo exporta varios componentes se utiliza el export por nombre.
+
+
