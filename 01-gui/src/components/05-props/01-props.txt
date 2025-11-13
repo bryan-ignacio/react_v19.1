@@ -1,0 +1,16 @@
+Los Componentes de React utilizan props para comunicarse entre si.
+
+Cada Componente padre puede enviar informacion a sus Componentes Hijos mediante props.
+
+    * props: se parecen a los atributos HTML
+             permiten pasar cualquier valor de JavaScript a travez de ellas
+             como objetos, arrays y funciones.
+    
+Props Conocidas:
+    las props son los datos que se pasan a un elemento JSX.
+    className, alt, width y height son algunas props que se pasan a un elemento <img>
+    estas props estan definidas en ReactDOM.
+    puedes crear tus propias props.
+
+Pasar props a un Componente:
+    
