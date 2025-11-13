@@ -1,0 +1,11 @@
+Llaves dobles en JSX:
+    Sirven para pasar objetos en JSX.
+
+    atributo = {
+        {
+            name: "Bryan",
+            lastName: "Ignacio"
+        }
+    }
+
+    

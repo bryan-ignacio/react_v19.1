@@ -15,3 +15,9 @@ Es posible utilizar JavaScript dentro de JSX con llaves:
     }
 
 Tambien funcionan las llamadas de funciones Javascript dentro de {}
+
+
+Donde puedo usar llaves?
+    1. dentro de etiquetas JSX.
+    2. Como atributos: atributo={variable}
+    
