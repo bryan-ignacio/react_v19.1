@@ -1,10 +1,15 @@
 import Profile from "./Profile";
-import Avatar from "./Profile";
 
 export default function App() {
+  const persona = {
+    name: "Lin Lanying",
+    imageId: "1bX5QH6",
+  };
+
   return (
     <>
-      <Profile />
+      <h1>hola</h1>
+      <Profile persona={persona} tam={100} />
     </>
   );
 }
