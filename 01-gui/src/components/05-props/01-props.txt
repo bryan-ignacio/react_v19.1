@@ -22,3 +22,5 @@ Las props son el unico elemento de un Componente.
 
 Podemos asignar un valor por default a una prop:
     Componente({objetoTal, datoTal = 10})
+
+Un Componente puede recibir props que cambian a lo largo del tiempo.
