@@ -1,5 +1,7 @@
 Los Componentes de React utilizan props para comunicarse entre si.
 
+Las props son datos que se pasan a elementos JSX.
+
 Cada Componente padre puede enviar informacion a sus Componentes Hijos mediante props.
 
     * props: se parecen a los atributos HTML
@@ -13,4 +15,10 @@ Props Conocidas:
     puedes crear tus propias props.
 
 Pasar props a un Componente:
-    
+    1. asignar la prop al Componente Hijo.
+    2. accedemos a las props con desestructuracion y podemos utilizarlas en el Componente.
+
+Las props son el unico elemento de un Componente.
+
+Podemos asignar un valor por default a una prop:
+    Componente({objetoTal, datoTal = 10})

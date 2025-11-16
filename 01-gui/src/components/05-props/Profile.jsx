@@ -1,10 +1,10 @@
-export default function Profile({ persona, tam }) {
+export default function Profile({ person, tam }) {
   // vamos a asignar dos props al componente Hijo.
 
   return (
     <>
       <h1>Profile</h1>
-      <Avatar p={persona} size={tam} />
+      <Avatar p={person} size={tam} />
     </>
   );
 }

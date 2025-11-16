@@ -9,7 +9,7 @@ export default function App() {
   return (
     <>
       <h1>hola</h1>
-      <Profile persona={persona} tam={100} />
+      <Profile person={persona} tam={100} />
     </>
   );
 }
