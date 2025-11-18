@@ -1,0 +1,5 @@
+Renderizado Condicional:
+
+Se puede renderizar JSX de forma condicional utilizando la sintaxis de JavaScript 
+como las declaraciones if, && y los operadores ? : 
+
