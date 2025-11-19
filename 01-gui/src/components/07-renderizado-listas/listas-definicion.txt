@@ -1,0 +1,34 @@
+para la manipulacion de un array de datos utilizaremos filter() y map()
+con React para filtrar y transformar tu array de datos en un array de componentes.
+
+<ul>
+  <li>Creola Katherine Johnson: matemática</li>
+  <li>Mario José Molina-Pasquel Henríquez: químico</li>
+  <li>Mohammad Abdus Salam: físico</li>
+  <li>Percy Lavon Julian: químico</li>
+  <li>Subrahmanyan Chandrasekhar: astrofísico</li>
+</ul>
+
+Generar una lista de elementos de un array:
+
+1. mover los datos a un array.
+    const people = [
+  'Creola Katherine Johnson: matemática',
+  'Mario José Molina-Pasquel Henríquez: químico',
+  'Mohammad Abdus Salam: físico',
+  'Percy Lavon Julian: químico',
+  'Subrahmanyan Chandrasekhar: astrofísico'
+    ];
+2. Mapea los miembros de  people en un nuevo array de nodos JSX, listItems:
+
+    const listItems = people.map(
+        (person) => {
+             <li>{person}</li>
+        }
+    );
+3. Devuelve listItems desde tu componente envuelto en un <ul>:
+
+function Componente(){
+    return <ul>{listItems}</ul>;
+}
+

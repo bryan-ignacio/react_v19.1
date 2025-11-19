@@ -1,10 +1,10 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
-import App from "./components/06-render-condicional/04-desafios/03-desafio/App";
+import Forma2 from "./components/07-renderizado-listas/04-desafios/01-desafio/Forma2";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <App />
+    <Forma2 />
   </StrictMode>
 );

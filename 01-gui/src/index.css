@@ -1,8 +1,4 @@
 :root {
-  display: flex;
-  justify-content: center; /* centra horizontal */
-  align-items: center; /* centra vertical */
-  height: 100vh; /* ocupa toda la pantalla, puedes ajustar */
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
 
