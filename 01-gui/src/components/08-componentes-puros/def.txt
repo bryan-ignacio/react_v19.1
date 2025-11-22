@@ -1,0 +1,15 @@
+React está diseñado en torno a este concepto.
+React supone que cada componente que escribes es una función pura.
+
+Los componentes solo deben devolver su JSX, 
+y no cambiar cualquier objeto o variable que existiera antes de renderizar: ¡Eso los haría impuros!
+
+¡Las funciones puras no mutan las variables fuera del alcance de la función 
+ni los objetos que se crearon antes de la llamada 
+—¡Eso las hace impuras!
+
+Sin embargo, está completamente bien cambiar variables y objetos que acabas de crear mientras renderizas
+Esto se llama “mutación local” —es como el pequeño secreto de tu componente.
+
+push, pop, reverse, y sort mutarán el array original 
+pero slice, filter, y map crearán uno nuevo.
