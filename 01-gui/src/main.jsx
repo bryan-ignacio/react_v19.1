@@ -1,10 +1,10 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
-import Forma2 from "./components/07-renderizado-listas/04-desafios/01-desafio/Forma2";
+import Poem from "./components/07-renderizado-listas/04-desafios/04-desafio/App";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <Forma2 />
+    <Poem />
   </StrictMode>
 );
