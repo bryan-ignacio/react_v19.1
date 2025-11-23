@@ -1,0 +1,3 @@
+Las funciones Controlodores de Eventos:
+Estas se ejecutan cuando ocurre un evento ya sea de teclado,mouse entre otras.
+
