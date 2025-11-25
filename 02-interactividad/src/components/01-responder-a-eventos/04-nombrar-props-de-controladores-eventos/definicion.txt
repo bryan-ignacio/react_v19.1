@@ -1,0 +1,5 @@
+Sin embargo, cuando estás creando tus propios componentes,
+ puedes nombrar sus props de controlador de evento como quieras.
+
+Por convención, las props de controladores de eventos deberían empezar con on,
+ seguido de una letra mayúscula.
