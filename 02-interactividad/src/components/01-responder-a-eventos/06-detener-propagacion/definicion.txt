@@ -1,0 +1,38 @@
+Primer semestre 2026
+1)Fisica 2
+2)Teo 2
+3)IO 2
+4)BASES 1
+
+Vacas Junio:
+1) Organizacion de computadoras
+2) Analisis y diseno de sistemas 1
+
+Segundo semestre:
+1) Arquitectura de computadores y ensambladores 1
+2) Modelacion y simulacion 1
+3) Sistemas organizacionales  y gerenciales 1
+4) Analisis y diseno de sistemas 2
+
+Vacas Diciembre:
+1) SISTEMAS OPERATIVOS 1
+2) Redes De Computadoras 1
+
+2027
+Primer semestres:
+1) Arquitectura de computadores y ensambladores 2
+2) Practicas intermedias
+3) Sistemas operativos 2
+4) Redes de computadoras 2
+5) Bases de datos 2
+
+Vacaciones Junio:
+Inteligencia artificial 1
+Seminario de sistemas 1
+
+Segundo semestre:
+1) sistema organizacionales y gerenciales 2
+2) Practica final 
+3) Modelacion y simulacion 2
+4) Software avanzado 
+
