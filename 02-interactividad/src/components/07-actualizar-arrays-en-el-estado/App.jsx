@@ -14,13 +14,15 @@ function Gallery() {
   const [showMore, setShowMore] = useState(false);
 
   function handleNextClick() {
-    console.log("siguiente: ", index);
-    setIndex(index + 1);
+    if (index < sculptureList.length - 1) {
+      setIndex(index + 1);
+    }
   }
 
   function handleAnteriorClick() {
-    console.log("anterior: ", index);
-    setIndex(index - 1);
+    if (index > 0) {
+      setIndex(index - 1);
+    }
   }
 
   function handleMoreClick() {
@@ -31,9 +33,16 @@ function Gallery() {
 
   return (
     <>
-      <button onClick={handleNextClick}>Siguiente</button>
+      <button
+        onClick={handleNextClick}
+        disabled={!(index < sculptureList.length - 1)}
+      >
+        Siguiente
+      </button>
       <br />
-      <button onClick={handleAnteriorClick}>Anterior</button>
+      <button onClick={handleAnteriorClick} disabled={!(index > 0)}>
+        Anterior
+      </button>
       <h2>
         <i>{sculpture.name} </i>
         por {sculpture.artist}
