@@ -1,11 +1,10 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
-
-import Ejercicio from "./components/04-actualizar-arrays-en-estado/02-agregar-elemento-array/Ejercicio";
+import App from "./components/04-actualizar-arrays-en-estado/03-eliminar-elemento-array/App";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <Ejercicio />
+    <App />
   </StrictMode>
 );
