@@ -45,6 +45,28 @@ export default function DesafioDos() {
     );
   }
 
+  function handleDecrementClick(id) {
+    /*
+      con map transformamos cada elemento del array y cada elemento transformado se guarda en
+      un nuevo array.
+    */
+    let listaUpdated = products.map((product) => {
+      if (product.id === id) {
+        return { ...product, count: product.count - 1 };
+      } else {
+        return product;
+      }
+    });
+    // ahora vamos a reasignarle el valor al array.
+    // * listUpdated cada uno de sus elemento pasa por una condicion si la cumple se guarda
+    // en un nuevo array.
+    // el producto.count es mayor a cero entonces lo guarada de lo contrario no lo guarada.
+    // por lo que si es -1 o -2 no los guardara.
+    listaUpdated = listaUpdated.filter((product) => product.count > 0);
+    // mandamos la lista actualizada.
+    setProducts(listaUpdated);
+  }
+
   return (
     <ul>
       {products.map((product) => (
@@ -57,7 +79,7 @@ export default function DesafioDos() {
           >
             +
           </button>
-          <button>–</button>
+          <button onClick={() => handleDecrementClick(product.id)}>–</button>
         </li>
       ))}
     </ul>
