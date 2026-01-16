@@ -1,10 +1,10 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
-import Form from "./components/01-gestion-estado/02-status-forms-reaccionar-estados/Form";
+import Desafio from "./components/01-gestion-estado/03-desafios/Desafio.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <Form />
+    <Desafio />
   </StrictMode>
 );
