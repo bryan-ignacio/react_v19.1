@@ -1,0 +1,60 @@
+1. identificar los estados visuales del Componente.
+
+    * empty - el formulario esta vacio y tiene el boton deshabilitado.
+    * typing - el formulario tiene el boton habilitado.
+    * Submiting - el formulario esta deshabilitado y el boton tambien.
+    * success - renderizara otro JSX.
+    * error - renderizara el formulario con un jsx del error.
+
+    Representar en un boceto los diferentes estados antes de agregar la logica.
+        * Boceto de la parte visual del formulario.
+    Esto permite iterar la IU antes de comenzar con la logica.
+
+2. Determinar que producen esos cambios de estado.
+
+    * empty - si el textarea esta vacio
+    * typing - (humano) escribe en el textearea
+    * submiting - (humano) cuando hace click en boton.
+    * success - (computo) respuesta del navegador.
+    * error - (computo) respuesta del navegador.
+
+    Cambiar el texto de entrada: empty-> typing
+    hacer click en el boton: Submiting
+    respuesta de la red exitosa: Success
+    respuesta fallida de la red: Error
+
+
+|Empty| -- StartTyping --> |Typing| --press submit--> |Submiting| --erroronia --> |Error|
+                                                            |respuesta correcta--> |Success|
+
+3. Representa el estado en memoria usando useState
+
+    tengo que representar los estados indispensables primero.
+
+    ✅ answer - estado del input
+    ✅ error - esatdo del error 
+    todas las de abajo es igual a una sola ✅ status - todos los estados del Componente menos empty.
+    // const [isEmpty, setIsEmpty] = useState(true);
+    // const [isTyping, setIsTyping] = useState(false);
+    // const [isSubmitting, setIsSubmitting] = useState(false);
+    // const [isSuccess, setIsSuccess] = useState(false);
+    // const [isError, setIsError] = useState(false);
+
+Paso 4: Elimina cualquier variable de estado no esencial 
+
+    ¿Significa que el estado causa una paradoja?
+    isTyping y isSubmitting no pueden ser true los dos al mismo tiempo.
+
+    ¿La misma información está disponible en otra variable de estado ya?
+    isEmpty y isTyping no pueden ser true al mismo tiempo. 
+
+    ¿Se puede obtener la misma información de la inversa de otra variable de estado? 
+    isError no es necesario porque se puede comprobar error !== null en su lugar.
+
+Despues de la limpiza nos quedan estos estados:
+
+    const [answer, setAnswer] = useState('');
+    const [error, setError] = useState(null);
+    const [status, setStatus] = useState('typing'); // 'typing', 'submitting', o 'success'
+
+Paso 5: Conecta los controladores de eventos para actualizar el estado 
