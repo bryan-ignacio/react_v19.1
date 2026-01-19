@@ -48,3 +48,6 @@ Evitar estado redundante
     solo tiene sentido cuando quieres ignorar todas las actualizaciones de una prop en especifico.
     podemos decir que 
         - el nombre de la prop con initial o default para aclarar que sus nuevos valores se ignoran.
+    
+EVITAR LA DUPLICACION DEL ESTADO
+    
