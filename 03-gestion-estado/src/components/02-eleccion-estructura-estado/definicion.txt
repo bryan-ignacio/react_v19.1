@@ -1,0 +1,50 @@
+Principios para la estructuracion de un estado
+    1. Estado realcionado con el grupo.
+        Si actualizas dos o mas variables de estado al mismo tiempo entonces se agrupan en una sola variable de estado.
+    2. Evita las contradicciones en el estado:
+        pasa cuando el estado esta estructurado de una manera que se contradise y esto causa errores.
+
+    3. Evita el estado redundante
+        si se puede calcular informacion en el renderizado del componente no se debe colocar esa info en el estado
+        del Componente.
+
+    4. Evita la duplicacion de estado
+        reducir la duplicacion de datos entre variables de estado.
+    
+    5. Evita el estado profundamente anidado
+        Esto no es muy conveniente para actualizar datos. es mejor una estructura plana.
+
+    El objetivo de esto es hacer que el estado sea facil de actualizar sin introducir errores.
+
+Estado relativo
+
+    En ocasiones, es posbile que no estes seguro entre usar una o varias variables de estado.
+
+    si tienes informacion en varios estados que puedes actualizar al mismo tiempo puedes utilizar solo un estado.
+
+    Si algunas de las variables de estado siempre cambian juntas entonces unificarla en una sola variable de estado.
+
+
+Evita contradicciones en el estado
+    cuando dos estados se contradicen entre ellos por ejemplo cuando dos estados no deben tener el mismo valor
+    por lo que hay que unificar el estado a uno y en base a esto ir mandado los estados por string.
+    con esto solo puede ser un estado u otro no los dos al mismo tiempo.
+
+Evitar estado redundante
+    EL estado redundate es uno innecesario por que se puede calcular con otros estados.
+
+    Hay un caso particular la de REFLECAR props EN EL ESTADO.
+    function Message({messageColor}){
+        const [color, setColor] = useState(messageColor)
+    }
+    el problema con esto es que la variable de estado solo se inicializa en el primer renderizado
+
+    es mejor
+        function Message({messageColor}){
+       const color = messageColor
+    }
+
+    REFLEJAR LAS PROPS  en el estado 
+    solo tiene sentido cuando quieres ignorar todas las actualizaciones de una prop en especifico.
+    podemos decir que 
+        - el nombre de la prop con initial o default para aclarar que sus nuevos valores se ignoran.
