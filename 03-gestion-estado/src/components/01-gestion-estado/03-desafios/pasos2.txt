@@ -1,0 +1,17 @@
+1. identificar los estados visuales del Componente.
+    * state Edicion
+    * state Guardar
+    * tambien esta un estado que muestra la informacion.
+
+    - Edicion: muestra el formulario habilitado con informacion.
+    - Guardar: Guarda los datos del formulario y los muestra en pantalla.
+
+2. Determinar que producen esos cambios de estado.
+
+    - Edicion: (humano) cuando se presiona el boton. 
+    - Guardar: (humano) cuando se preciona el boton.
+
+3. Representa el estado en memoria usando useState
+
+    representar estados indispensables primero.
+    - 
