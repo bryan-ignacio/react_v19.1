@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { Fragment, useState } from "react";
 
 const initialItems = [
   { title: "pretzels", id: 0 },
@@ -35,8 +35,8 @@ export default function Menu() {
         <ul>
           {items.map((item) => {
             return (
-              <>
-                <li key={item.id}>
+              <Fragment key={item.id}>
+                <li>
                   <input
                     type="text"
                     value={item.title}
@@ -47,7 +47,7 @@ export default function Menu() {
                   </button>
                 </li>
                 <br />
-              </>
+              </Fragment>
             );
           })}
         </ul>

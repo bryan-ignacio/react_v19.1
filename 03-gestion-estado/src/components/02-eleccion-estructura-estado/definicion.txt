@@ -50,4 +50,55 @@ Evitar estado redundante
         - el nombre de la prop con initial o default para aclarar que sus nuevos valores se ignoran.
     
 EVITAR LA DUPLICACION DEL ESTADO
-    
+    Si duplicas informacion en varios estados estos se puede pasar desapersubido actualizaciones de estado
+    y no poder obtener el resultado deseado.
+    por lo que se recomienda no duplicar informacion en estados.
+
+Evita el estado profundamente anidado
+    Ejemplo:
+
+    export const initialTravelPlan = {
+  id: 0,
+  title: '(Root)',
+  childPlaces: [{
+    id: 1,
+    title: 'Tierra',
+    childPlaces: [{
+      id: 2,
+      title: 'África',
+      childPlaces: [{
+        id: 3,
+        title: 'Botsuana',
+        childPlaces: []
+      }
+  }]
+};
+
+    Se utiliza la informacion con una estructura plana
+
+    Ejemplo:
+        es como una tabla en base de datos.
+
+export const initialTravelPlan = {
+  0: {
+    id: 0,
+    title: '(Root)',
+    childIds: [1, 42, 46],
+  },
+  1: {
+    id: 1,
+    title: 'Tierra',
+    childIds: [2, 10, 19, 26, 34]
+  },
+  2: {
+    id: 2,
+    title: 'África',
+    childIds: [3, 4, 5, 6 , 7, 8, 9]
+  },
+  3: {
+    id: 3,
+    title: 'Botsuana',
+    childIds: []
+  }
+  }
+Ahora que el estado es “plano” (también conocido como “normalizado”), la actualización de elementos anidados se vuelve más fácil.
