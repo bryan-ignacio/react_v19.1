@@ -18,8 +18,8 @@ export default function App() {
         <p>Nos Vemos luego!</p>
         <br />
         <label>
-          <input type="checkbox" onChange={handleChageCheck} /> Tomate un
-          descanso
+          <input type="checkbox" onChange={handleChageCheck} checked={check} />{" "}
+          Tomate un descanso
         </label>
       </>
     );
@@ -30,27 +30,40 @@ export default function App() {
           <Counter />
           <br />
           <label>
-            <input type="checkbox" onChange={handleChageCheck} /> Tomate un
-            descanso
+            <input
+              type="checkbox"
+              onChange={handleChageCheck}
+              checked={check}
+            />{" "}
+            Tomate un descanso
           </label>
+        </div>
+      </>
+    );
+  }
+
+  function Counter() {
+    const [count, setCount] = useState(0);
+
+    function handleClick() {
+      setCount(count + 1);
+    }
+    return (
+      <>
+        <div style={{ border: "1px solid white" }}>
+          <p>{count}</p>
+          <button onClick={handleClick}>Agregar Uno</button>
         </div>
       </>
     );
   }
 }
 
-function Counter() {
-  const [count, setCount] = useState(0);
+/*
+Aqui se cambia entre diferentes tipos de Componentes en la misma posicion.
+Inicialmente, el primer hijo del div contenia un Counter. 
+Pero cuando lo cambiaste por un p, React elimino el Counter del arbol de la UI y destruyo su estado.\
 
-  function handleClick() {
-    setCount(count + 1);
-  }
-  return (
-    <>
-      <div style={{ border: "1px solid white" }}>
-        <p>{count}</p>
-        <button onClick={handleClick}>Agregar Uno</button>
-      </div>
-    </>
-  );
-}
+Al volver a cambiar se borra el <p></p> y se agrega el componente Counter.
+
+*/
