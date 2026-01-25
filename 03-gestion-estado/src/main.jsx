@@ -1,10 +1,10 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
-import DesafioUno from "./components/03-compartir-estado/02-desafioUno";
+import FilterableList from "./components/03-compartir-estado/03-desafioDos";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <DesafioUno />
+    <FilterableList />
   </StrictMode>,
 );
