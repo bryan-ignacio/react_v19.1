@@ -6,29 +6,48 @@ import { useState } from "react";
  *
  */
 export default function App() {
+  const [check, setCheck] = useState(false);
+
+  function handleChangeCheck(e) {
+    setCheck(e.target.checked);
+  }
+
   return (
     <>
-      <Counter />
+      <Counter check={check} onChangeCheck={handleChangeCheck} />
+      <br />
+      <div>
+        <label htmlFor="">
+          <input type="checkbox" onChange={handleChangeCheck} checked={check} />{" "}
+          Dale Estilo
+        </label>
+      </div>
     </>
   );
 }
 
-function Counter() {
+function Counter({ check }) {
   const [count, setCount] = useState(0);
+  const [hover, setHover] = useState(false);
 
   function handleClick() {
     setCount(count + 1);
+  }
+  let className = "normal";
+  if (hover) {
+    className = "fondo";
+  }
+
+  if (check) {
+    className = "estilo";
   }
 
   return (
     <>
       <div
-        style={{
-          border: "2px solid gray",
-          width: "100px",
-          height: "120px",
-          textAlign: "center",
-        }}
+        onPointerEnter={() => setHover(true)}
+        onPointerLeave={() => setHover(false)}
+        className={className}
       >
         <p>{count}</p>
         <button onClick={handleClick}>Agregar Uno</button>
