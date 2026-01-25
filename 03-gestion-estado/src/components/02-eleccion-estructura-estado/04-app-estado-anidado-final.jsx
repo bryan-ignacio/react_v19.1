@@ -6,6 +6,7 @@ export default function TravelPlan() {
   const [plan, setPlan] = useState(initialTravelPlan);
 
   function handleComplete(parentId, childId) {
+    // accedemos al objeto con el parentId que es el padre
     const parent = plan[parentId];
     // Crear una nueva versión del lugar principal
     // que no incluye ID del hijo.
@@ -20,6 +21,7 @@ export default function TravelPlan() {
       [parentId]: nextParent,
     });
   }
+
   // esta variable contiene el root y este tiene la propiedad childIds que contiene los ids de los planetas.
   const root = plan[0];
   // esta variable es un arreglo que contiene los ids de los planetas.

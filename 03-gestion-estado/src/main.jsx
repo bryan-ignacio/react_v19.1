@@ -1,9 +1,10 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
-import TravelPlan from "./components/02-eleccion-estructura-estado/04-app-estado-anidado-final";
+import DesafioUno from "./components/03-compartir-estado/02-desafioUno";
+
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <TravelPlan />
+    <DesafioUno />
   </StrictMode>,
 );
