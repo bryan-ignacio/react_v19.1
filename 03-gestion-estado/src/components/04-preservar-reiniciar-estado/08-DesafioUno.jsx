@@ -13,12 +13,15 @@ export default function App() {
 
   return (
     <>
-      {showHint ? (
-        <>
-          <div>
-            <p>
-              <i>Pista: ¿Tu ciudad favorita?</i>
-            </p>
+      <div>
+        {showHint && (
+          <p>
+            <i>Pista: ¿Tu ciudad favorita?</i>
+          </p>
+        )}
+
+        {showHint ? (
+          <>
             <Form />
             <br />
             <button
@@ -28,11 +31,9 @@ export default function App() {
             >
               Ocultar pista
             </button>
-          </div>
-        </>
-      ) : (
-        <>
-          <div>
+          </>
+        ) : (
+          <>
             <Form />
             <br />
             <button
@@ -42,9 +43,9 @@ export default function App() {
             >
               Mostrar pista
             </button>
-          </div>
-        </>
-      )}
+          </>
+        )}
+      </div>
     </>
   );
 }
