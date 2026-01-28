@@ -11,6 +11,11 @@ Casi funciona, pero hay un error. Si rellenas la entrada “Nombre” y marcas l
 el texto se queda en la primera entrada (que ahora es “Apellido”). 
 Arréglalo para que el texto de la entrada también se mueva cuando inviertas el orden.
 
+
+Solucion:
+NO estaba tan sencilla ya que lo de keys se indico solo para reiniciar estados pero no para que permanescan.
+  al darle una key a cada Componente Field esto le indica a React como emparejar elestado correcto para cualquiera de los dos <Field>
+
 */
 
 export default function App() {
@@ -25,23 +30,30 @@ export default function App() {
       Invertir el orden
     </label>
   );
-  if (reverse) {
-    return (
-      <>
-        <Field key="lastName" label="Apellido" />
-        <Field key="firstName" label="Nombre" />
-        {checkbox}
-      </>
-    );
-  } else {
-    return (
-      <>
-        <Field key="firstName" label="Nombre" />
-        <Field key="lastName" label="Apellido" />
-        {checkbox}
-      </>
-    );
-  }
+
+  return (
+    <>
+      {reverse ? (
+        <>
+          <Field label={"Apellido"} key={"apellido"} />
+          <br />
+          <Field label={"Nombre"} key={"nombre"} />
+          <br />
+          <br />
+          {checkbox}
+        </>
+      ) : (
+        <>
+          <Field label="Nombre" key={"nombre"} />
+          <br />
+          <Field label="Apellido" key={"apellido"} />
+          <br />
+          <br />
+          {checkbox}
+        </>
+      )}
+    </>
+  );
 }
 
 function Field({ label }) {
