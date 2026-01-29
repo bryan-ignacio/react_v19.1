@@ -2,10 +2,10 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
 
-import ContactList from "./components/04-preservar-reiniciar-estado/12-DesafioCinco";
+import TaskApp from "./components/05-extraer-logica-en-un-reducer/01-consolidar-logica-con-reducer";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <ContactList />
+    <TaskApp />
   </StrictMode>,
 );
