@@ -97,3 +97,7 @@ Paso 3) Usa el reducer desde tu Componente.
 La logica del Componente se hace mas sencilla de leer cuando se utiliza useReducer()
 AHora los controladores de eventos especifican que ocurrio, despachando acciones.
 y la funcion reducer determina como se actualiza el estado en respuesta a esa accion.
+
+recomendacion useReducer Si hay actualizaciones incorrectas de estado en el Componente y se necesita introducir mas codigo en el.
+
+se puede utilizar useState() y useReducer() en el mismo Componente
