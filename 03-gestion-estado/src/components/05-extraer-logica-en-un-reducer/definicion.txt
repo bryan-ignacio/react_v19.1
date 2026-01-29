@@ -1,0 +1,99 @@
+1)Extraer logica de estado en un reducer
+
+Si un Componente tiene muchas actualizaciones de estado entonces se tiene que usar el hook useReducer()
+este simplifica la logica de los controladores que actualizan el estado haciendo mas legible y sencillo el Componente.
+
+-tambien se puede agregar la funcion en un nuevo archivo que contendra la logica de actualizacion.
+
+
+2)Consolidar logica de estado con un reducer
+
+A medida que el Componente se le agregue mucha logica para la actualizacion del estado entonces se requiere un reducer.
+
+Ejemplo:
+    Un Componente que tiene un estado pero este se actualiza con mas de tres controladores de eventos
+
+    Como crear el reducer?
+    - primero vamos a crear un archivo que contendra la funcion reducer que contendra toda la logica de actualizacion del Componente.
+    - el reducer manejara el estado.
+    - si ya contamos con la implementacion del hook useState y queremos migrarlo a useReducer entonces se hace lo siguiente:
+        1. cambiar la asignacion a un estado a despachar acciones.
+        2. escribir una funcion reducer.
+        3. utilizar el reducer desde el Componente.
+
+Vamos a indagar mas en estos pasos para migrar a useReducer
+
+Paso 1) Cambiar de establacer un estado a despachar acciones.
+    que quiere decir con esto? que quitemos toda implementacion de logica que modifique el estado.
+    - indicamos que accion realizo el usuario.
+    - en lugar de actualizar el estado con controladores de eventos vamos a despachar una accion (agregar,eliminar,actualizar)
+    - en el controlador de eventos en lugar de actualizar el estado vamos a despachas una accion y la informacion para que reailice la accion.
+
+    //funcion controladora del evento agregar tarea
+    function handleAddTask(text){
+        dispatch({
+            type: "added",
+            id: nextId++,
+            text: text
+        })
+    }
+
+    sintaxis:
+    dispatch(objetoAccion)
+
+    objetoAccion: conforme a lo necesitado eso se manda en el objetoAccion
+        - type: siempre debe incluir un type que describe que ocurrio.
+        - otros parametros indican informacion adicional.
+
+Paso 2) Escribir una funcion reducer
+
+    sintaxis:  function nombreFuncionReducer( estado, accion ){retorna el proximo estado}
+        - Recibe dos parametros; estado y accion
+        - React actualiza el estado con lo que retorno el reducer
+
+
+    Mover la logica de asignacion del estado; logica en controlador -> funcion reducer
+    1. declaramos nuestro estado como primer argumento (tasks)
+    2. declaramos nuestro objeto action como segundo argumento (action)
+    3. retornamos el proximo estado desde el reducer.
+
+    quedara de esta forma nuestra funcion reducer 
+
+    function tasksReducer(tasks, action){
+
+        if(action.type === "added"){
+            return [
+                ...tasks,
+                {
+                    id: action.id,
+                    text: action.text,
+                    done: false
+                }
+            ]
+        }
+    }
+    es mejor utilizar la sentencia de control switch case para esto.
+
+Por que los reducers se llaman de esa manera?
+
+Se llaman de esa forma por el metodo reducer() de los arrays. que recorre un array y acumula un unico valor a partir de varios.
+
+Los Reducers en React:
+    toman el estado y la accion con eso retornan el siguiente estado.
+
+Paso 3) Usa el reducer desde tu Componente.
+
+    - Se tiene que conectar la funcion reducer con el Componente
+    - importamos useReducer()
+    - reemplazamos el useState() con useReducer()
+        el hook useReducer(pr1, pr2) 
+        parametro uno: se le pasa la funcion reducer.
+        parametro dos: se le pasa el valor inicial del estado.
+
+        este hook nos brinda el estado: [state, dispatch]
+        dispatch: es la funcion que se le manda las acciones y esta despachara una asignacion de estado( actualiza el estado)
+                  despacha accciones al reducer.
+        
+La logica del Componente se hace mas sencilla de leer cuando se utiliza useReducer()
+AHora los controladores de eventos especifican que ocurrio, despachando acciones.
+y la funcion reducer determina como se actualiza el estado en respuesta a esa accion.
