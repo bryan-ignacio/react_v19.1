@@ -84,7 +84,7 @@ Los Reducers en React:
 Paso 3) Usa el reducer desde tu Componente.
 
     - Se tiene que conectar la funcion reducer con el Componente
-    - importamos useReducer()
+    - importamos useReducer
     - reemplazamos el useState() con useReducer()
         el hook useReducer(pr1, pr2) 
         parametro uno: se le pasa la funcion reducer.
