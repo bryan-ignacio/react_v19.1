@@ -6,10 +6,7 @@ export default function Chat({ contact, message, dispatch }) {
       <textarea
         value={message}
         placeholder={"Chatear con " + contact.name}
-        onChange={(e) => {
-          // TODO: Despachar edited_message
-          // (Lee el valor del input en e.target.value)
-        }}
+        onChange={(e) => {}}
       />
       <br />
       <button>Enviar a {contact.email}</button>
