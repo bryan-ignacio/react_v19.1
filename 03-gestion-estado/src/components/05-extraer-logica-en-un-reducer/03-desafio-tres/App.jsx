@@ -22,8 +22,12 @@ export default function Messenger() {
   return (
     <>
       <div>
-        <ContactList contacts={contacts} />
-        <Chat />
+        <ContactList
+          contacts={contacts}
+          contact={contact}
+          dispatch={dispatch}
+        />
+        <Chat message={message} contact={contact} />
       </div>
     </>
   );

@@ -1,9 +1,9 @@
-export default function Chat() {
+export default function Chat({ message, contact }) {
   return (
     <>
-      <textarea></textarea>
+      <textarea>{message}</textarea>
       <br />
-      <button>Enviar a name@mail.com</button>
+      <button>Enviar a {contact.email}</button>
     </>
   );
 }
