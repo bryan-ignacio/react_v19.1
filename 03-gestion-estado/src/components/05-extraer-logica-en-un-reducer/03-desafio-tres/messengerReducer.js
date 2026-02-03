@@ -1,15 +1,31 @@
 export default function messengerReducer(state, action) {
   switch (action.type) {
     case "changed_selection": {
-      return;
+      return {
+        ...state,
+        selectedId: action.contactId,
+      };
     }
     case "edited_message": {
-      return;
+      return {
+        ...state,
+        messages: {
+          ...state.messages,
+          [state.selectedId]: action.message,
+        },
+      };
     }
     case "sent_message": {
-      return {};
+      return {
+        ...state,
+        messages: {
+          ...state.messages,
+          [state.selectedId]: "",
+        },
+      };
     }
-    default:
-      break;
+    default: {
+      throw Error("Unknown action: " + action.type);
+    }
   }
 }

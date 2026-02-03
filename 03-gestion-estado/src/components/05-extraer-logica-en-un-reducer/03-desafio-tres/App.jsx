@@ -5,29 +5,38 @@ import Chat from "./Chat";
 
 const contacts = [
   { id: 0, name: "Taylor", email: "taylor@example.com" },
-  { id: 1, name: "Cris", email: "cris@example.com" },
-  { id: 2, name: "Ada", email: "ada@example.com" },
+  { id: 1, name: "Alice", email: "cris@example.com" },
+  { id: 2, name: "Bob", email: "ada@example.com" },
 ];
 
 const initialState = {
-  selectId: 0,
-  message: "Hola",
+  selectedId: 0,
+  messages: {
+    0: "Hola Taylor",
+    1: "Hola Alice",
+    2: "Hola Bob",
+  },
 };
 
 export default function Messenger() {
   const [state, dispatch] = useReducer(messengerReducer, initialState);
-  //obtenemos el mensaje y el contacto seleccionado
-  const message = state.message;
-  const contact = contacts.find((contact) => contact.id === state.selectId);
+  // obtenemos el mensaje y el contacto seleccionado (usar selectedId de forma consistente)
+  const message = state.messages[state.selectedId];
+  const contact = contacts.find((contact) => contact.id === state.selectedId);
   return (
     <>
       <div>
         <ContactList
           contacts={contacts}
+          selectedId={state.selectedId}
+          dispatch={dispatch}
+        />
+        <Chat
+          //   key={contact.id}
+          message={message}
           contact={contact}
           dispatch={dispatch}
         />
-        <Chat message={message} contact={contact} />
       </div>
     </>
   );
