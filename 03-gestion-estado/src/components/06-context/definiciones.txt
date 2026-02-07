@@ -1,0 +1,32 @@
+Pasar datos en profundidad con Context
+    Context permite que la informacion de un Componente Padre este disponible en cualquier componente del arbol que este debajo de el.
+
+El problema con pasar props
+    es mas trabajo pasar props de componente a componente hijo una y otra vez para llegar al componete profundo.
+
+    hay una forma de teletransportar datos datos a componentes en el arbol que lo necesiten sin usar props se llama COntext.
+
+
+CONTEXT: Una alternativa a pasar props
+    permite que el componente padre provea datos al arbol entero debajo de el.
+
+    pasar de esto:
+        <Section>
+            <Heading level={3}>Acerca de</Heading>
+            <Heading level={3}>Fotos</Heading>
+            <Heading level={3}>Videos</Heading>
+        </Section>
+    a esto:
+        <Section level={3}>
+             <Heading>Acerca de</Heading>
+             <Heading>Fotos</Heading>
+             <Heading>Videos</Heading>
+        </Section>
+
+para esto usamos context:
+    1. creamos el context - podemos llamarlo LevelContext ya que es para el level de los encabezados.
+    2. usamos el context - desde el componente que necesita los datos. en este caso los Heading usara LevelContext
+    3. dar ese context desde el componente que especifica los datos - Section -> provee -> LevelContext
+
+el context permite que un padre provea datos a la totalidad del arbol dentro de el.
+
