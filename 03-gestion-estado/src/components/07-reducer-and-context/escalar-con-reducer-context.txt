@@ -1,0 +1,5 @@
+* Combinar un reducer con el context.
+    Ejemplo:
+        El estado esta gestionado por un reducer
+        La funcion reducer contiene toda la logica de actualizacion y se declara al final del archivo.
+    
