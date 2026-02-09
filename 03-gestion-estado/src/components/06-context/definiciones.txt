@@ -30,3 +30,9 @@ para esto usamos context:
 
 el context permite que un padre provea datos a la totalidad del arbol dentro de el.
 
+para utilizar context en tres pasos:
+    1. crear un contexto. (NombreContext)
+    2. usar ese contexto desde el componente que necesita los datos. (Heading usa NombreContexto)
+    3. proveer ese contexto desde el componente que especifica los datos. (Padre provee NombreContexto)
+
+El contexto permite que en un padre provea datos a la totalidad del arbol dentro de el.
