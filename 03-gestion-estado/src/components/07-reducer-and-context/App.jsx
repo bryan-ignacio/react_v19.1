@@ -13,10 +13,37 @@ const initialTasks = [
 export default function App() {
   const [tasks, dispatch] = useReducer(taskReducer, initialTasks);
 
+  function handleAddTask(text) {
+    dispatch({
+      type: "added",
+      id: nextId++,
+      text: text,
+    });
+  }
+
+  function handleChangeTask(task) {
+    dispatch({
+      type: "changed",
+      task: task,
+    });
+  }
+
+  function handleDeleteTask(taskId) {
+    dispatch({
+      type: "deleted",
+      id: taskId,
+    });
+  }
+
   return (
     <>
-      <AddTask />
-      <TaskList tasks={tasks} />
+      <h1>Dia libre en kyoto</h1>
+      <AddTask onAddTask={handleAddTask} />
+      <TaskList
+        tasks={tasks}
+        onChangeTask={handleChangeTask}
+        onDeleteTask={handleDeleteTask}
+      />
     </>
   );
 }
