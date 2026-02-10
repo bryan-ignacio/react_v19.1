@@ -29,3 +29,12 @@ export default function taskReducer(tasks, action) {
       throw Error("Accion no encontrada: " + action.type);
   }
 }
+
+/*
+useContext le dice a react que este componente quiere leer el contexto.
+*/
+
+/*
+ Si cualquier componente adentro de este <Section> pregunta por levelContext
+ enviale este valor level.
+ */

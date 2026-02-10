@@ -2,4 +2,19 @@
     Ejemplo:
         El estado esta gestionado por un reducer
         La funcion reducer contiene toda la logica de actualizacion y se declara al final del archivo.
-    
+
+* escalar con reducer y context
+    reducers: permiten consolidar la logica de actualizacion del estado de un componente.
+    context: permite pasar informacion en profundidad a otros componentes que este debajo de el.
+
+se puede combinar los reducers y el contexto para gestionar el estado de una pantalla compleja.
+
+Aprendere:
+    - como combinar un reducer con el contexto.
+    - como evitar pasar el estado y la funcion dispatch a traves de props.
+    - como mantener la logica del contexto y del estado en un archivo separado.
+
+* Combinar un reducer con el contexto
+    ejemplo:
+        introduccion a reducers el estado es gestionado por un reducer.
+        la funcion reducer contiene toda la logica de actualizacion del estado.
