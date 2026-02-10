@@ -3,6 +3,16 @@ import AddTask from "./AddTask";
 import TaskList from "./TaskList";
 import taskReducer from "./tasksReducer";
 
+/*
+Entendiendo toda la Aplicacion:
+  Esta es una aplicacion para gestionar tareas: 
+    -Agregar Tarea
+    -Editar Tarea
+    -Borrar Tarea
+    - al Editar una Tarea podemos Guardar la Tarea.
+  la aplicacion tendra datos iniciales que mostrara al iniciar la aplicacion.
+*/
+
 let nextId = 3;
 const initialTasks = [
   { id: 0, text: "El Camino del Filósofo", done: true },
@@ -12,9 +22,17 @@ const initialTasks = [
 
 export default function App() {
   // por el momento el estado y la funcion que actualiza el esta dispatch estan disponibles en App
-  //ahora quiero que otros componentes lean la lista de tareas y la actualicen.
+  //ahora quiero que otros componentes lean la lista de tareas y la actualicen
+  // aqui utilizamos el hook useReducer ya que actualizamos varias veces el estado y tiene mucha logica este componente.
+  // useReducer(p1,p2): necesita dos parametros la funcionReducer y el valor inicial del estado en este caso le pasamos un array con datos inicales.
+  // useReducer retorna dos variables [estado, funcionActualizaEstado]
   const [tasks, dispatch] = useReducer(taskReducer, initialTasks);
 
+  /*
+  la necesita el componente <AddTask/>
+  esta funcion despacha la accion added para que la funcion reducer actualice el estado con el objeto accion.
+  mandamos los datos necesarios para realizar la accion.
+   */
   function handleAddTask(text) {
     dispatch({
       type: "added",
@@ -23,6 +41,11 @@ export default function App() {
     });
   }
 
+  /*
+  la necesita el componente <TaskList/>
+  despacha a la funcion reducer el objeto action que tendra la accion a ejecutar para actualizar el estado.
+  con los datos necesarios par realizar la accion.;
+   */
   function handleChangeTask(task) {
     dispatch({
       type: "changed",
@@ -30,6 +53,10 @@ export default function App() {
     });
   }
 
+  /*
+  la necesita el componente <TaskList/>
+    necesita el id de la tarea a eliminar.
+   */
   function handleDeleteTask(taskId) {
     dispatch({
       type: "deleted",
@@ -37,6 +64,12 @@ export default function App() {
     });
   }
 
+  /*
+   Este Componente Renderiza un (<h1/>)(<AddTask/>)(<TaskList/>)
+
+   como algunos componentes necesitan las funciones controladores de eventos para actualizar el estado tasks
+   vamos a crear las funciones controladores de eventos que necesitan estos Componentes.
+   */
   return (
     <>
       <h1>Dia libre en kyoto</h1>
