@@ -11,6 +11,8 @@ const initialTasks = [
 ];
 
 export default function App() {
+  // por el momento el estado y la funcion que actualiza el esta dispatch estan disponibles en App
+  //ahora quiero que otros componentes lean la lista de tareas y la actualicen.
   const [tasks, dispatch] = useReducer(taskReducer, initialTasks);
 
   function handleAddTask(text) {
@@ -47,3 +49,29 @@ export default function App() {
     </>
   );
 }
+/*
+
+*la prop controladora de eventos: onChangeTask contendra la funcion controladora de eventos handleChangeTask.
+  handleChangeTask necesita un parametro para agregar una tarea.
+
+*la prop controladora de eventos: onDeleteTask contendra la funcion controladora de eventos
+handelDeleteTask.
+  handleDeleteTask necesita un parametro task para eliminar esa tarea.
+
+Y por que pasamos estas props controladoras de eventos al Componente TaskList?
+  como podemos observar la estructura JSX del Componente <TaskList/>
+  renderiza una lista de tareas necesita:
+    1) la lista de tareas.
+    2) la funcion controladora de eventos que actualiza una determinada tarea.
+    3) la funcion controladora de eventos para eliminar una determinada tarea.
+
+  pero por que?
+  por que renderiza un componente <Task/> y este necesita estas funciones controladoras de eventos.
+
+  AL inspeccionar el componente <Task/> observamos que:
+    las necesita por que en su JSX hay botones para EditarTarea y ELiminarTarea
+    por lo que necesitara actualizar el estado por lo cual necesitara esas props para actualizar el estado 
+    de tareas.
+
+
+ */
