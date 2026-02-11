@@ -39,6 +39,7 @@ function Task({ task, onChange, onDelete }) {
     // actualizamos el estado true por que esta editando.
     setIsEditing(true);
   }
+
   function handleGuardarClick() {
     // actualizamos el estado false por que ya no se esta editando.
     setIsEditing(false);
@@ -49,8 +50,10 @@ function Task({ task, onChange, onDelete }) {
     // para eliminar una tarea de la lista.
     onDelete(task.id);
   }
+
   function handleChange(e) {
     // utiliza la propControladora de eventos que referencia a la funcion Controladora de eventos.
+    //recibe una task para que funcione la funcion controladora de eventos.
     onChange({ ...task, text: e.target.value });
   }
 
@@ -58,6 +61,7 @@ function Task({ task, onChange, onDelete }) {
   let contenidoTarea;
 
   function handleCheckChange(e) {
+    //la funcion controladora de eventos recibe un objeto task.
     onChange({
       ...task,
       done: e.target.checked,
