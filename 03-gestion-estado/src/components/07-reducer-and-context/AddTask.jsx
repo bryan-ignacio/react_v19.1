@@ -19,6 +19,14 @@ export default function AddTask({ onAddTask }) {
     setText(e.target.value);
   }
 
+  /*
+  cuando hacemos click en Agregar lanza un evento onClick
+
+  actualiza el estado a ningun caracter
+  para mantener el input vacio despues de agregar.
+  llamamos a la prop controladora de eventos que contiene la funcion
+  controladora de eventos que agrega la tarea con la variable de estado.
+  */
   function handleClick() {
     setText("");
     onAddTask(text);

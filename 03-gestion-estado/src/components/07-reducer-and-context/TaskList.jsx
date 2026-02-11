@@ -86,7 +86,8 @@ function Task({ task, onChange, onDelete }) {
   }
 
   /*
-    El Componente Task retornara el siguiente JSX: (checkbox)(contenidoTarea)(botonBorrar)
+    El Componente Task retornara el siguiente JSX: 
+    (checkbox)(contenidoTarea)(botonBorrar)
   */
   return (
     <>
