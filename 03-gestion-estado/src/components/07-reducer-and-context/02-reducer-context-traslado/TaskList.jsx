@@ -41,6 +41,13 @@ function Task({ task }) {
     setIsEditing(false);
   }
 
+  function handleBorrarClick() {
+    dispatch({
+      type: "deleted",
+      taskId: task.id,
+    });
+  }
+
   let contenido;
 
   if (isEditing) {
@@ -63,7 +70,7 @@ function Task({ task }) {
     <>
       <input type="checkbox" />
       {contenido}
-      <button>Borrar</button>
+      <button onClick={handleBorrarClick}>Borrar</button>
     </>
   );
 }

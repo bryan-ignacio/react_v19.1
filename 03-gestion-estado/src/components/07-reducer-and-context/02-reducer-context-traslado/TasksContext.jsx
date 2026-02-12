@@ -48,7 +48,7 @@ function funcionReducer(tasks, action) {
       });
     }
     case "deleted": {
-      return;
+      return tasks.filter((task) => task.id !== action.taskId);
     }
     default:
       throw Error("accion no encontrada: " + action.type);
