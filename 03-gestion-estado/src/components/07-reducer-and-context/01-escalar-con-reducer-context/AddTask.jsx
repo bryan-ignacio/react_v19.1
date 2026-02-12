@@ -4,6 +4,7 @@ import { TasksDispatchContext } from "./Context";
 let nextId = 3;
 export default function AddTask() {
   const [text, setText] = useState("");
+
   const dispatch = useContext(TasksDispatchContext);
 
   function handleClick() {

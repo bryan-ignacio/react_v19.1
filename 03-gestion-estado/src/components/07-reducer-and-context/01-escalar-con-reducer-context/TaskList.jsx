@@ -19,9 +19,15 @@ export default function TaskList() {
   );
 }
 
+/*
+este componente recibe un parametro que es el task.
+ */
 function Task({ task }) {
+  // necesita la funcion dispatch para actualizar el estado.
   const dispatch = useContext(TasksDispatchContext);
+  // necesito un estado para verificar que mostarar en mi arbol.
   const [isEditing, setIsEditing] = useState(false);
+
   let contenido;
 
   function handleEditarClick() {
@@ -39,20 +45,23 @@ function Task({ task }) {
   }
 
   function handleGuardarClick() {
-    isEditing(false);
+    setIsEditing(false);
+  }
+
+  function handleCheckChange(e) {
+    dispatch({
+      type: "changed",
+      task: {
+        ...task,
+        done: e.target.checked,
+      },
+    });
   }
 
   function handleBorrarClick() {
     dispatch({
       type: "deleted",
       taskId: task.id,
-    });
-  }
-
-  function handleCheckChange(e) {
-    dispatch({
-      ...task,
-      done: e.target.checked,
     });
   }
 
