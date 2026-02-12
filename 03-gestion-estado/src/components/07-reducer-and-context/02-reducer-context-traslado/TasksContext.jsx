@@ -26,7 +26,7 @@ export function TasksProvider({ children }) {
 }
 
 // funcion reducer sirve para retornar el siguiente estado.
-export function funcionReducer(tasks, action) {
+function funcionReducer(tasks, action) {
   switch (action.type) {
     case "added": {
       return [
