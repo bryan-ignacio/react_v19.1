@@ -39,7 +39,13 @@ function funcionReducer(tasks, action) {
       ];
     }
     case "changed": {
-      return;
+      return tasks.map((task) => {
+        if (task.id === action.task.id) {
+          return action.task;
+        } else {
+          return task;
+        }
+      });
     }
     case "deleted": {
       return;

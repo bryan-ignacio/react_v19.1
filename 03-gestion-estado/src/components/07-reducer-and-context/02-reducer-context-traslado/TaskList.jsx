@@ -21,10 +21,24 @@ export default function TaskList() {
 
 function Task({ task }) {
   const [isEditing, setIsEditing] = useState(false);
-  // const dispatch = useContext(ContextTasks);
+  const dispatch = useContext(ContextDispatch);
 
   function handleEditarClick() {
     setIsEditing(true);
+  }
+
+  function handleEditarChange(e) {
+    dispatch({
+      type: "changed",
+      task: {
+        ...task,
+        text: e.target.value,
+      },
+    });
+  }
+
+  function handleGuardarClick() {
+    setIsEditing(false);
   }
 
   let contenido;
@@ -32,8 +46,8 @@ function Task({ task }) {
   if (isEditing) {
     contenido = (
       <>
-        <input type="text" />
-        <button>Guardar</button>
+        <input type="text" value={task.text} onChange={handleEditarChange} />
+        <button onClick={handleGuardarClick}>Guardar</button>
       </>
     );
   } else {
