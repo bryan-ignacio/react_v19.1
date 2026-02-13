@@ -48,6 +48,16 @@ function Task({ task }) {
     });
   }
 
+  function handleCheckBoxChange(e) {
+    dispatch({
+      type: "changed",
+      task: {
+        ...task,
+        done: e.target.checked,
+      },
+    });
+  }
+
   let contenido;
 
   if (isEditing) {
@@ -68,7 +78,11 @@ function Task({ task }) {
 
   return (
     <>
-      <input type="checkbox" />
+      <input
+        type="checkbox"
+        checked={task.done}
+        onChange={handleCheckBoxChange}
+      />
       {contenido}
       <button onClick={handleBorrarClick}>Borrar</button>
     </>
