@@ -1,0 +1,5 @@
+Referenciar valores con refs
+Cuando quieres que un componente "recuerde" alguna informacion.
+pero no quieres que esa informacion provoque nuevos renderizados se utiliza ref.
+
+
