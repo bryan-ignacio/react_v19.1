@@ -25,3 +25,16 @@ export default function App() {
     </>
   );
 }
+
+/*
+  
+En este ejemplo, el valor actual de una ref se usa para calcular la salida del 
+renderizado:
+
+{ isOnRef.current ? "Encendido": "Apagado" }
+
+Esta es una senal de que esta inforamcion no debiar estar en una ref.
+y en su lugar deberia colocarse en el estado.
+para arreglarlo quita el ref y en su lugar usa el estado.
+
+ */
