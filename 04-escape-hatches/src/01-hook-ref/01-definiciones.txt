@@ -2,4 +2,68 @@ Referenciar valores con refs
 Cuando quieres que un componente "recuerde" alguna informacion.
 pero no quieres que esa informacion provoque nuevos renderizados se utiliza ref.
 
+Cuando utilizar ref:
+* Cuando una pieza de informacion es usada para el renderizado, guardala en el estado.
+* Cuando una pieza de informacion solo se necesita en los controladores de eventos
+  y no requiere un rerenderizado, usar una ref quizas sea mas eficiente.
+
+Diferencias entre las refs y el estado
+    refs:
+    se pueden mutar. en cambio con el estado se tiene que usar la funcionActualizadora del estado.
+
+Refs:
+    * useRef(initialValue retorna un objeto { current: initialValue }
+    * no desencadena un rerenderizado cuando lo cambias.
+    * mutable: actualizar el valor de current fuera del proceso de renderizado. 
+    * no deberias leer o escribir el valor de current durante el renderizado.
+
+El estado: 
+    * useState(initialValue) retorna el valor actual de la variableEstado y una funcionActualizadora.
+    * desencadena un rerenderizado cuando lo cambias.
+    * inmutable: necesita usar la funcionActualizadora para modificar variableEstado para poner en cola un rerenderizado.
+    * puedes leer el estado en cualquier momento. sin embargo, cada renderizado tiene su propia instantanea del estado que no cambia.
+    
+
+COMO useRef() FUNCIONA INTERNAMENTE?
+es una variable de estado normal pero sin un asignador. 
+las refs puede que te recuerden a los campos de instancias, pero en lugar de 
+this.something escribes somethingREf.current.
+
+CUANDO USAR REFS?
+tipicamente, usara una ref cuando tu componente necesite salir de React y comunicarse con APIS externas.
+A menu una API del navegador no impactara en la apariencia de un componente.
+Estas son algunas de estas situaciones raras:
+    * almacenar identificadores de timeouts
+    * almacenar y manipular elementos del DOM.
+    * almacenar otros objetos que no son necesarios para calcular el JSX.
+
+BUENAS PRACTICAS
+    * tratar a las refs como una puerta de escape.
+      son utiles cunado trabajas con sistemas externos o APIS del navegador.
+    
+    * no leas o escribas ref.current durante el renderizado.
+    si se ncesita alguna informacion durante el renderizado utilizar estado.
+    porque react no sabe cuando ref.current cambia incluso leerlo mientras se renderiza
+    hace que el comportamiento de tu componente sea dificil de predecir.
+
+No hay que preocuparse por evitar la mutacion cuando trabajas con ref 
+siempre y cuando el objeto que estas mutando no se este usando para el renderizado.
+
+A react no le importa lo que hagas con ref o con su contenido.
+
+LAS REFS Y EL DOM
+    puedes apuntar una ref a cualquier valor.
+    Sin embargo, el uso mas comun para una ref es acceder a un elemento DOM.
+
+RECAPITULACION
+    * las refs son una puerta de escape para guardar valores que no se usan en el renderizado.
+
+    * una ref es un objeto plano de JavaScript con una sola propiedad llamada current que puedes leer y asignarle un valor.
+
+    * puedes pedirle a React que te de una ref llamando al Hook useRef.
+
+    * como el estado, las refs retienen informacion entre los rerenderizados de un componente.
+
+    * a diferencia del estado, asignar el valor de current de una ref no desencadena un rerenderizado.
+    no leas o escribas ref.current durante el renderizado. Esto hace que tu componente sea dificil de predecir.
 
