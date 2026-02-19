@@ -40,3 +40,15 @@ export default function App() {
     </>
   );
 }
+
+/*
+El estado funciona como una instantanea, asi que no puedes leer el ultimo estado
+de una operacion asincrona como un timeout.
+
+sin embargo, puedes guardar el ultimo texto del input en una ref.
+una ref es  mutable, asi que puedes leer la propiedad current en cualquier momento.
+
+como el texto actual tambien se usa para el renderizado, en este ejemplo
+
+
+*/
