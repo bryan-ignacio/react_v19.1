@@ -1,5 +1,10 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import "./01-hook-ref/App.css";
+import "/App.css";
+import CatFriends from "./02-DOM-con-ref/01-ejemplo/App";
 
-createRoot(document.getElementById("root")).render(<StrictMode></StrictMode>);
+createRoot(document.getElementById("root")).render(
+  <StrictMode>
+    <CatFriends />
+  </StrictMode>,
+);
