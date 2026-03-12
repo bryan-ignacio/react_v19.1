@@ -7,3 +7,24 @@ A veces se necesita acceder a los objetos del DOM gestionados por React.
 por lo que necesitamos una ref al nodo DOM.
 
 obtener una ref del nodo
+
+para aceder a un nodo DOM gestionado por React, primero importamos el Hook useRef:
+    import { useRef } from "react";
+    
+luego, usalo para declara una ref dentro de tu componete
+
+    const myRef = useRef(null);
+
+finalmente pasamos la ref como el atributo ref a la etiqueta JSX en el que quieres obtner el nodo DOM:
+
+    <div ref={myRef}>
+
+el hook useRef retornara un objeto con una sola propiedad llamada current
+inicialmente myRef.current va a ser null
+
+cuando react cree un nodo DOM para el <div> entonces colocara la referencia al nodo
+en myRef.current = nodoDOMDiv
+podemos acceder al nodo DOM desde controladores.
+
+//podemos utilizar cualquier API del navegador 
+myRef.current.scrollIntoView();
