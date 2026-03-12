@@ -1,0 +1,27 @@
+.contenedor {
+  text-align: center;
+}
+
+.contenedor button {
+  margin: 0.5rem;
+}
+
+.lista {
+  list-style: none;
+}
+
+li {
+  display: inline-block;
+  margin: 0.6rem;
+  padding: 0.5rem;
+}
+
+.contenedor2 {
+  width: 2000px;
+  background-color: gray;
+}
+
+img {
+  width: 400px;
+  height: 250px;
+}
