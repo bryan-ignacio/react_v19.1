@@ -1,0 +1,9 @@
+manipular el document object model con refs
+A veces se necesita acceder a los objetos del DOM gestionados por React.
+
+-cuando necesitemos enfocar un input 
+-enfocar un nod, desplazarse hast el o medir su tamano y posicion/
+
+por lo que necesitamos una ref al nodo DOM.
+
+obtener una ref del nodo
