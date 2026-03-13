@@ -1,0 +1,10 @@
+.container-imgs {
+  width: 6000px;
+  height: 500px;
+}
+
+.img-cat {
+  width: 500px;
+  height: 350px;
+  margin: 10px;
+}
